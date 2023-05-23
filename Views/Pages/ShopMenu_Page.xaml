@@ -1,0 +1,24 @@
+﻿<Page x:Class="BookShop.Views.Pages.ShopMenu_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookShop.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShopMenu_Page">
+
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel x:Name="spAdminWindow" Orientation="Vertical">
+                <Button Content="Добавление жанра" Name="btnAddStyle" Click="btnAddStyle_Click" Style="{StaticResource stlMainButton}"/>
+                <Button Content="Добавление автора" Name="btnAddAuther" Click="btnAddAuther_Click" Style="{StaticResource stlMainButton}"/>
+                <Button Content="Добавление издателя" Name="btnAddPublisher" Style="{StaticResource stlMainButton}"/>
+            </StackPanel>
+            <StackPanel x:Name="spUserWindow" Orientation="Vertical">
+                <Button Content="Просмотр книг" Style="{StaticResource stlMainButton}"/>
+                <Button Content="корзина" Style="{StaticResource stlMainButton}"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

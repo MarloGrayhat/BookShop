@@ -1,0 +1,53 @@
+﻿<Page x:Class="BookShop.Views.Pages.AddUser_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookShop.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddUser_Page">
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" >
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Email:"
+                       Grid.Row="0"
+                       Grid.Column="0"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Bottom"
+                       Style="{StaticResource stlMainTextBlock}"
+                       />
+                    <TextBlock Text="Password:"
+                       Grid.Row="2"
+                       Grid.Column="0"
+                       HorizontalAlignment="Right"
+                       VerticalAlignment="Top"
+                       Style="{StaticResource stlMainTextBlock}"
+                       />
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="10,0,0,0" >
+                    <TextBox x:Name="tbEmail"
+                     Grid.Row="0"
+                     Grid.Column="2"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Bottom"
+                     Style="{StaticResource stlMainTextBox}"
+                     />
+                    <TextBox x:Name="tbPassword"
+                     Grid.Row="2"
+                     Grid.Column="2"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Top"
+                     Style="{StaticResource stlMainTextBox}"
+                     />
+                </StackPanel>
+            </StackPanel>
+            <Button x:Name="btnAddUser"
+                    Click="btnAddUser_Click"
+                    Content="создать"
+                    Margin="0,10,0,0"
+                    Style="{StaticResource stlMainButton}"/>
+        </StackPanel>
+    </Grid>
+</Page>
