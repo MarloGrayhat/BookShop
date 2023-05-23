@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace BookShop.Views.Pages
 {
@@ -25,31 +26,51 @@ namespace BookShop.Views.Pages
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+            if (CheckFullName() && CheckYearOfBirth())
+            {
+                DB.Author author = new DB.Author();
+                author.FullName= tbxName.Text;
+                author.YearOfBirth = Convert.ToInt32(tbxYear.Text);
+                DB.ConnDB.connDb.Author.Add(author);
+                DB.ConnDB.connDb.SaveChanges();
+                FrameMain.frameMain.GoBack();
+            }
+        }    
+        
+
+        private bool CheckFullName()
+        {
             Regex fio = new Regex(@"([А-Я][а-я]+)(( [А-Я][а-я]+){1,2})");
             if (fio.IsMatch(tbxName.Text))
             {
                 if (DB.ConnDB.connDb.Author.FirstOrDefault(x => x.FullName == tbxName.Text) == null)
                 {
-                    if (Convert.ToInt32(tbxYear.Text) <= 2005)
-                    {
-                        DB.Author author = new DB.Author();
-                        author.FullName = tbxName.Text;
-                        DB.ConnDB.connDb.Author.Add(author);
-                        DB.ConnDB.connDb.SaveChanges();
-                        FrameMain.frameMain.GoBack();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Увы, но аввтору должно быть больше 18 лет");
-                        FrameMain.frameMain.GoBack();
-                    }
+                    return true;
                 }
                 else
                 {
-                    MessageBox.Show("Такой автор уже существует");
-                    FrameMain.frameMain.GoBack();
+                    FrameMain.Error("Такой автор уже существует");
+                    return false;
                 }
-            }    
+            }
+            else
+            {
+                FrameMain.Error("Имя автора введено не корректно");
+                return false;
+            }
+        }
+
+        private bool CheckYearOfBirth()
+        {
+            if (Convert.ToInt32(tbxYear.Text) <= 2005)
+            {
+                return true;
+            }
+            else
+            {
+                FrameMain.Error("Увы, но аввтору должно быть больше 18 лет");
+                return false;
+            }
         }
     }
 }

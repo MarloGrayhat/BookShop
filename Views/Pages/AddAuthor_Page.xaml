@@ -11,11 +11,11 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Orientation="Horizontal" >
                 <TextBlock Text="ФИО" Style="{StaticResource stlMainTextBlock}"/>
-                <TextBox x:Name="tbxName" Style="{StaticResource stlMainTextBox}" Margin="10,0,0,0"/>
+                <TextBox x:Name="tbxName" Style="{StaticResource stlMainTextBox}" Margin="10,0,0,0" MaxLength="4"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" >
                 <TextBlock Text="Год рождения" Style="{StaticResource stlMainTextBlock}"/>
-                <TextBox x:Name="tbxYear"  Style="{StaticResource stlMainTextBox}" Margin="10,0,0,0" MaxLines="4"/>
+                <TextBox x:Name="tbxYear"  Style="{StaticResource stlMainTextBox}" Margin="10,0,0,0" MaxLength="4" />
             </StackPanel>
             <Button x:Name="btnAdd" Content="Добавить" Click="btnAdd_Click" Style="{StaticResource stlMainButton}"/>
         </StackPanel>

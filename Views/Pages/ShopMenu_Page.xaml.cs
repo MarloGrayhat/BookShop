@@ -34,6 +34,11 @@ namespace BookShop.Views.Pages
         private void btnAddAuther_Click(object sender, RoutedEventArgs e)
         {
             FrameMain.frameMain.Navigate(new AddAuthor_Page());
+        }
+
+        private void btnAddPublisher_Click(object sender, RoutedEventArgs e)
+        {
+            FrameMain.frameMain.Navigate(new AddPublisher_Page());
 
         }
     }

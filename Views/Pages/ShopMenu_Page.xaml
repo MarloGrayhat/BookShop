@@ -13,7 +13,7 @@
             <StackPanel x:Name="spAdminWindow" Orientation="Vertical">
                 <Button Content="Добавление жанра" Name="btnAddStyle" Click="btnAddStyle_Click" Style="{StaticResource stlMainButton}"/>
                 <Button Content="Добавление автора" Name="btnAddAuther" Click="btnAddAuther_Click" Style="{StaticResource stlMainButton}"/>
-                <Button Content="Добавление издателя" Name="btnAddPublisher" Style="{StaticResource stlMainButton}"/>
+                <Button Content="Добавление издателя" Name="btnAddPublisher" Click="btnAddPublisher_Click" Style="{StaticResource stlMainButton}"/>
             </StackPanel>
             <StackPanel x:Name="spUserWindow" Orientation="Vertical">
                 <Button Content="Просмотр книг" Style="{StaticResource stlMainButton}"/>
